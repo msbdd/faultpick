@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faultpick"
+version = "0.0.1"
+description = "Fault plane picking from seismic cluster geometry and moment tensors"
+requires-python = ">=3.10"
+authors = []
+keywords = ["seismology", "fault", "nodal-plane", "moment-tensor", "PCA", "cluster"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "pyrocko",
+    "glasbey",
+]
+
+[project.optional-dependencies]
+plot = [
+    "matplotlib",
+    "plotly"
+]
+
+[project.scripts]
+faultpick = "faultpick.cli:main"
+
+[tool.setuptools.package-dir]
+faultpick = "src"
+"faultpick.clustering" = "src/clustering"
+"faultpick.geometry" = "src/geometry"
+"faultpick.io" = "src/io"
+"faultpick.moment_tensor" = "src/moment_tensor"
+"faultpick.plotting" = "src/plotting"
+
+[tool.setuptools]
+packages = ["faultpick", "faultpick.clustering", "faultpick.geometry", "faultpick.io", "faultpick.moment_tensor", "faultpick.plotting"]
