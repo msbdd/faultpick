@@ -1,0 +1,11 @@
+# Core
+numpy
+pandas
+scipy
+scikit-learn
+pyrocko
+glasbey
+
+# Optional: plotting (not implemented yet)
+matplotlib
+plotly
